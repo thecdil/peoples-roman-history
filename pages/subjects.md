@@ -1,13 +1,30 @@
 ---
 title: Subjects
-layout: cloud
+layout: page
 permalink: /subjects.html
-# Default subject page is configured in "_data/theme.yml"
-# leave cloud-fields as "site.data.theme.subjects-fields"
-cloud-fields: site.data.theme.subjects-fields
 ---
 
-## Browse Subjects
+## Browse Facets and Themes
 
-Use this word cloud visualization to browse terms and subjects.
-Word size is determined by frequency and all words link to a corresponding collection search.
+Below are subject clouds displaying the terms used to describe the historical characters in this exhibit. 
+Click on the terms to view the related essays.
+
+## Citizen Status
+
+{% include feature/cloud.html fields="status" button="primary" %}
+
+## Gender
+
+{% include feature/cloud.html fields="gender" button="success" %}
+
+## Occupation
+
+{% include feature/cloud.html fields="occupation" button="info" %}
+
+## Theme
+
+{% include feature/cloud.html fields="theme" button="primary" %}
+
+## Location
+
+{% include feature/cloud.html fields="location;province" button="success" %}

@@ -56,11 +56,21 @@
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
+    var Esri_WorldTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: USGS, Esri, TANA, DeLorme, and NPS',
+        maxZoom: 13
+    });
+    var Cawm_Ancient = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
+        attribution: 'Tiles &copy; Consortium of Ancient World Mappers',
+        maxZoom: 13
+    });
     /* add base map switcher */
     var baseMaps = {
+        "Esri World Terrain": Esri_WorldTerrain,
+        "Esri Imagery": Esri_WorldImagery,
+        "Consortium of Ancient World Mappers": Cawm_Ancient,
         "Esri World StreetMap": Esri_WorldStreetMap,
         "Esri National Geo": Esri_NatGeoWorldMap,
-        "Esri Imagery": Esri_WorldImagery,
         "Open Street Map": OpenStreetMap_Mapnik
     };
     L.control.layers(baseMaps).addTo(map);
@@ -125,12 +135,13 @@
         if (feature.properties.img) {
             thumbImg = '<img class="map-thumb" src="' + feature.properties.img + '" alt="' + imgAlt + '">';
         } else {
-            thumbImg = getIcon(feature.properties.template,feature.properties.format,"thumb")
+            thumbImg = '';
         }
         // set up popup content
         var popupTemplate = '<h2 class="h4"><a class="text-dark" href="' + itemHref + '">' +
-            feature.properties.title + '</a></h2><div class="text-center"><a href="' + itemHref + 
-            '" >' + thumbImg + '</a></div><p>';
+            feature.properties.title + '</a></h2>';
+        if(thumbImg != ''){ popupTemplate += '<div class="text-center"><a href="' + itemHref + '" >' + thumbImg + '</a></div>'; }
+        popupTemplate += '<p>';
         {% for f in fields %}{% if f.display_name %}
         if (feature.properties[{{ f.field | escape | jsonify }}]) {
             popupTemplate += '<strong>{{ f.display_name }}:</strong> ' + feature.properties[{{ f.field | escape | jsonify }}] + '<br>'; 

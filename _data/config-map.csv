@@ -1,5 +1,9 @@
 field,display_name,search
-date,Date,true
-creator,Creator,true
-subject,Subjects,true
+time_period,Time Period,
 location,Location,true
+province,Province,true
+status,Status,true
+gender,Gender,true
+age,Age,
+occupation,Occupation,true
+theme,Themes,true

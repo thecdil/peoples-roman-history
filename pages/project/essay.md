@@ -85,12 +85,6 @@ on the final website, that convention will be replaced by the actual image, some
 
 {% include feature/image.html objectid="test-img-01"  %}
 
-A YouTube video would like like:
-
-`[objectid: example03]`
- 
-{% include feature/video.html objectid="https://youtu.be/puf3LS9HhTM" %}
-
 ----------
 
 ## Media Item Sheet

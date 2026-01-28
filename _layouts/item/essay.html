@@ -101,8 +101,10 @@ custom-foot: js/modal-hash-js.html
 
     </div>
     
-    {%- if site.data.theme.browse-buttons == true -%}
-        {% include item/browse-buttons.html %}
-    {%- endif -%}
+    <div class="my-5">
+        <a class="btn btn-secondary" href="{{ page.previous_item | relative_url }}" id="prev-page-button">&laquo; Previous</a>
+        <a class="btn btn-secondary" href="{{ '/' | relative_url }}">Back to Home</a>
+        <a class="btn btn-secondary" href="{{ page.next_item | relative_url }}" id="next-page-button">Next &raquo;</a>
+    </div>
 
 </div>

@@ -137,7 +137,7 @@ Then, go into your essay Doc and Sheet, and enable sharing:
 The metadata represents the standardized fields we will all use to describe the exhibits and the historical characters you created. 
 They allow users to discover, browse, and understand the essays.
 
-The instructor provided you the seeds of this information, which you will have full fleshed out by the time you submit this form. 
+The instructor provided you the seeds of this information, which you will have fully fleshed out by the time you submit this form. 
 
 The form will ask you:
 
@@ -149,12 +149,12 @@ The form will ask you:
 - Province - The Roman province where it is located
 - latitude - Use [Pleiades gazetteer](https://pleiades.stoa.org/) or other historical source to find appropriate lat/long for the location of your character's story
 - longitude 
-- status - Citizenship status in the Roman Empire
-- gender - Character's gender
-- age - character's age
-- occupation - character's occupation
-- family status - Describe character's family status
-- themes - choose the main historical topics your essay explores from the course list, or add your own:
+- Status - Citizenship status in the Roman Empire
+- Gender - Character's gender
+- Age - character's age
+- Occupation - character's occupation
+- Family status - Describe character's family status
+- Themes - choose the main historical topics your essay explores from the course list, or add your own:
     - race/ethnicity
     - gender
     - sexuality
@@ -177,7 +177,7 @@ The form will ask you:
     - Cultural exchange
     - Imperial language/propaganda
     - Cultural reception (what I’m calling “Roman Afterlives”)
-- author - The name(s) of authors of this essay, as you want them to appear on the website
-- essay Google Doc link 
+- Author - The name(s) of authors of this essay, as you want them to appear on the website
+- Essay Google Doc link 
 - Item Google Sheet link 
-- featured image objectid - If you submitted a Google Sheet and have one image that should be featured to represent your essay, please paste the objectid of the item here
+- Featured image objectid - If you submitted a Google Sheet and have one image that should be featured to represent your essay, please paste the objectid of the item here

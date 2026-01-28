@@ -1,7 +1,9 @@
 field,display_name,btn,hidden,sort_name,facet_name
-date,Date,,,Date Created
-description,,,true,
-creator,Creator,,,
-subject,,true
-location,,true,,,Location Depicted
-identifier,,,true,Identifier
+time_period,Time Period,
+location,Location,
+province,Province,
+status,Status,true
+gender,Gender,true
+age,Age,
+occupation,Occupation,
+theme,Themes,true

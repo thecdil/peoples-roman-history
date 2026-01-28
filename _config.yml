@@ -45,6 +45,12 @@ metadata: roman-exhibits
 #     extension: 'html' 
 #     filter: 'objectid'  
 
+# activate collection
+collections:
+  essays:
+    output: false
+
+
 ##########
 # ORGANIZATION SETTINGS
 #

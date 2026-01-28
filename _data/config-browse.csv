@@ -7,3 +7,4 @@ gender,Gender,true
 age,Age,
 occupation,Occupation,
 theme,Themes,true
+exhibit_type,Exhibit Type,true

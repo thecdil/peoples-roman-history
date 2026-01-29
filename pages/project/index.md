@@ -26,6 +26,11 @@ This project is also about confidence. Many students come into Roman history ass
 
 ## Introduction to Digital Scholarship
 
+- [What Is Digital Humanities](https://whatisdigitalhumanities.com/)
+- [Digital Scholarship](https://en.wikipedia.org/wiki/Digital_scholarship)
+
+At University of Idaho Library:
+
 - [CDIL](https://cdil.lib.uidaho.edu/)
     - [Digital Collections](https://www.lib.uidaho.edu/digital/) (digitized or born digital library open access collections)
     - [CDIL Projects](https://cdil.lib.uidaho.edu/projects/) (scholarship projects with collaborators)

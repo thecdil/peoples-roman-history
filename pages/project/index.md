@@ -43,7 +43,7 @@ This project is also about confidence. Many students come into Roman history ass
 
 ### Data and Spreadsheets
 
-- Thinking about (humanities/history) data. 
+- Thinking about humanities/history data. 
 - How does structured data becomes websites? 
 - How does metadata impact discovery, useability, and context?
 
@@ -55,3 +55,15 @@ Example guide-like project:
     - Historic photographs
     - Parse into data
     - Represent as spreadsheet (metadata, structured data)
+
+## Resources
+
+- [Copyright and How to Find Copyright Free Media of (Almost) Anything](https://aweymo-ui.github.io/source_cr_free/) (Andrew)
+- [Perseus Digital Library](https://www.perseus.tufts.edu/hopper/)
+- [Arachne](https://arachne.dainst.org/) (German Archaeological Institute)
+- [Ubi Erat Lupa](https://lupa.at/) (database of stone monuments)
+- [Orbis: network model of the Roman World](https://orbis.stanford.edu/)
+- [FastiOnline](https://www.fastionline.org/) (database of archaeological excavations since the year 2000)
+- [Trimontium Museum](https://hub.catalogit.app/trimontium-museum)
+- [Research Databases & Digital Collections](https://www.aarome.org/research/resources/research-databases), American Academy in Rome
+- [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page)

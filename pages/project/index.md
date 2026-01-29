@@ -35,6 +35,7 @@ At University of Idaho Library:
     - [Digital Collections](https://www.lib.uidaho.edu/digital/) (digitized or born digital library open access collections)
     - [CDIL Projects](https://cdil.lib.uidaho.edu/projects/) (scholarship projects with collaborators)
     - [CollectionBuilder](https://collectionbuilder.github.io/) (open source framework for creating digital collection and exhibit websites, developed at CDIL, powers everything!)
+    - Iterative development!
 
 ### Student Digital Scholarship Projects
 

@@ -147,7 +147,7 @@
             popupTemplate += '<strong>{{ f.display_name }}:</strong> ' + feature.properties[{{ f.field | escape | jsonify }}] + '<br>'; 
         }
         {% endif %}{% endfor %}
-        popupTemplate += '</p><div class="text-center"><a class="btn btn-light" href="' + itemHref + '" >View Item</a></div>';
+        popupTemplate += '</p><div class="text-center"><a class="btn btn-light" href="' + itemHref + '" >View Character</a></div>';
         layer.bindPopup(popupTemplate);
     }
     function objectMarkers(feature,latlng) {
@@ -206,7 +206,7 @@
                 btn.title = 'About this map';
                 btn.setAttribute('role', 'button');
                 btn.setAttribute('aria-label', 'Show map information');
-                if (!infoDismissed) { btn.style.display = 'none'; }
+                //if (!infoDismissed) { btn.style.display = 'none'; }
                 L.DomEvent.on(btn, 'click', L.DomEvent.preventDefault)
                           .on(btn, 'click', showPanel);
                 return container;
@@ -235,13 +235,13 @@
         /* close handler */
         panel.querySelector('#map-info-close').addEventListener('click', function() {
             panel.style.display = 'none';
-            infoControl.getContainer().querySelector('a').style.display = '';
+            //infoControl.getContainer().querySelector('a').style.display = '';
             localStorage.setItem(infoKey, '1');
         });
 
         function showPanel() {
             panel.style.display = '';
-            infoControl.getContainer().querySelector('a').style.display = 'none';
+            //infoControl.getContainer().querySelector('a').style.display = 'none';
             localStorage.removeItem(infoKey);
         }
     })();

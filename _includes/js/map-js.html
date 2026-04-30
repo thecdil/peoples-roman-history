@@ -223,9 +223,12 @@
         panel.setAttribute('role', 'region');
         panel.setAttribute('aria-label', 'Map information');
         panel.innerHTML = `<button id="map-info-close" aria-label="Close information panel">&times;</button>
-            <h1 class="modal-title h4">{{ site.data.theme.map-description-title | default: site.title | escape }}</h1>
+            <h1 class="modal-title h4">The Peoples' History of the Roman Empire</h1>
             <div class="info-panel-body">
-                {{ site.data.theme.map-description | default: "" }}
+                <p><img src="{{ '/objects/small/fresco_isis_giminiana_musei_vaticani2_sm.jpg' | relative_url }}" class="w-100 rounded"></p>
+                <h2 class="h5">A Journey Through Roman History</h2>
+                <p>The Roman Empire was immense in both geographical and chronological scope. Beginning in the fifth century BCE, Roman power slowly began to creep out of the city, extending first through Italy, then overseas to Sicily, Sardinia, and Corsica, then into France, Spain, North Africa, and the Balkans until at its greatest extent it stretched from southern Scotland to the Near East, reaching almost as far as the Persian Gulf.</p> 
+                <p>With so much time and space to grapple with, the daily lives of individual Romans can feel impossible to grasp. By creating fictional characters that are composites of real evidence, this student-built website brings those daily lives into the foreground. Each point opens an individual essay intended to introduce you to life in Ancient Rome between 31 BCE and 500 CE across several themes.</p> <p>So, dive in, and enjoy learning about everything from baking bread to making perfume to marching with a Roman army!</p>
             </div>
         `;
         if (infoDismissed) { panel.style.display = 'none'; }

@@ -1,0 +1,68 @@
+{% comment %}
+
+    Custom image include for peoples-roman-history - pulls image data from separate media csv!
+
+    Embeds an image, on click opens a modal with more information and link to source.
+    
+    E.G. --> {% include essay/image.html objectid="demo_001" %}
+
+    Options: 
+    - "objectid" = matching figure item in project sheet
+    - "alt" = alternative text describing the image. (optional)
+    - "caption" = caption to display below item (optional)
+    - "width" = will use responsive sizing to set the % size on desktop (will be 100% on mobile), choose from "25", "50", "75", or "100" (optional)
+    
+{%- endcomment -%}
+{% capture includeid %}{{ include.objectid | slugify | replace: "-","_" }}{% endcapture %}
+{%- assign figure = site.data[site.metadata] | where: "objectid", include.objectid | first -%}
+{%- capture image_caption -%}{{ include.caption | default: figure.title }}{%- endcapture -%}
+{%- capture image_alt -%}{{ include.alt | default: figure.image_alt_text | default: figure.description | default: figure.title }}{%- endcapture -%}
+{%- capture image_src -%}{{ figure.image_small | default: figure.object_location | relative_url }}{% endcapture %}
+<div class="feature-include">
+    <figure class="figure {% if include.width %}feature-w-{{ include.width }}{% endif %}">
+        <img class="figure-img img-fluid rounded lazyload w-100" alt="{{ image_alt | default: image_caption | escape }}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="{{ image_src }}" >
+        <figcaption class="figure-caption text-center">
+            <a id="{{ includeid }}Btn" role="button" data-bs-toggle="modal" href="#{{ includeid }}Modal">{{ image_caption }}</a>
+        </figcaption>
+    </figure>
+</div>
+
+<div class="modal fade" id="{{ includeid }}Modal" tabindex="-1" aria-labelledby="{{ includeid }}ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="{{ includeid }}ModalLabel">{{ figure.title }}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-7">
+                        <img class="img-thumbnail" src="{{ figure.image_small | default: figure.image_thumb | relative_url }}" alt="{{ include.alt | default: figure.image_alt_text | default: figure.description | default: figure.title | escape }}">
+                        <a href="{{ figure.original_link | relative_url }}" class="btn btn-outline-primary m-3">View Original Source</a>
+                    </div>
+                    <div class="col-md-5">
+                        {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display_name != nil' -%}
+                        <div id="item-metadata">
+                            <dl>
+                                {% for f in fields %}{% if figure[f.field] %}
+                                <dt class="field">{{ f.display_name }}:</dt>
+                                <dd class="field-value text-break">
+                                    {% if f.browse_link == "true" %}
+                                    {% assign topics = figure[f.field] | split: ";" %}
+                                    {% for t in topics %}
+                                    <a class="me-3" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
+                                    {% endfor %}
+                                    {% elsif f.external_link == "true" %}
+                                    <a href="{{ figure[f.field] }}">{{ figure[f.field] }}</a>
+                                    {% else %}
+                                    {{ figure[f.field] | replace: '""','"' }}{% endif %}
+                                </dd>
+                                {% endif %}{% endfor %}
+                            </dl>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

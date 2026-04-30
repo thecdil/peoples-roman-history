@@ -10,26 +10,29 @@ custom-foot: js/modal-hash-js.html
 {% capture all-page-content %}
 <h2 id="place" class="mt-5">The Character</h2>
 
-<p>{{ page.description }}</p>
+<div class="row">
+    <div class="col-md-4">
+        <p>{{ page.description }}</p>
+        <p><strong>Name:</strong> {{ page.title }}</p>
+        <p><strong>Gender:</strong> {{ page.gender }}</p>
+        <p><strong>Age:</strong> {{ page.age }}</p>
+        <p><strong>Status:</strong> {{ page.status }}</p>
+        <p><strong>Family:</strong> {{ page.family_status }}</p>
+        <p><strong>Occupation:</strong> {{ page.occupation }}</p>
+        <p><strong>Time Period:</strong> {{ page.time_period }}</p>
+        <p><strong>Location:</strong> {{ page.location }}, {{ page.province }}</p>
+    </div>
+    <div class="col-md-8">
+    {% include item/mini-map.html %}
+    </div>
+</div>
 
-<p><strong>Name:</strong> {{ page.title }}</p>
-<p><strong>Gender:</strong> {{ page.gender }}</p>
-<p><strong>Age:</strong> {{ page.age }}</p>
-<p><strong>Status:</strong> {{ page.status }}</p>
-<p><strong>Family:</strong> {{ page.family_status }}</p>
-<p><strong>Occupation:</strong> {{ page.occupation }}</p>
-<p><strong>Time Period:</strong> {{ page.time_period }}</p>
-<p><strong>Location:</strong> {{ page.location }}, {{ page.province }}</p>
+{% if essay.title %}<h2 id="title" class="mt-4 h1">{{ essay.title }}</h2>{% endif %}
 
-{% include item/mini-map.html %}
-
-<h2 id="title" class="mt-4 h1">{{ essay.title }}</h2>
-
-<p class="fs-6 fw-semibold ps-4"><em>by {{ essay.author }}</em></p>
+{% if essay.author %}<p class="fs-6 fw-semibold ps-4"><em>by {{ essay.author }}</em></p>{% endif %}
 
 {{ essay.content }}
 
-{% if children.size > 0 %}<h2 id="primary-sources">Primary Sources</h2>{% endif %}
 {%- endcapture -%}
 
 {% assign jumboId = page.featured_image_id %}
@@ -96,8 +99,6 @@ custom-foot: js/modal-hash-js.html
     <div id="about-contents-wrapper">
 
         {{ all-page-content }}
-
-        {% if children.size > 0 %}{% include item/child/place-compound-item-modal-gallery.html %}{% endif %}
 
     </div>
     

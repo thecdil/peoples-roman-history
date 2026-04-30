@@ -1,7 +1,9 @@
 ---
 title: Introduction to Peoples' History of the Roman Empire
 permalink: /project/index.html
-layout: page-narrow
+layout: about
+about-featured-image: false
+heading: false
 ---
 
 # Introduction to Peoples' History of the Roman Empire

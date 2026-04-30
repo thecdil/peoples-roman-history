@@ -1,7 +1,9 @@
 ---
 title: Contributing
 permalink: /project/essay.html
-layout: page-narrow
+layout: about
+about-featured-image: false
+heading: false
 ---
 
 # Contributing to the Project

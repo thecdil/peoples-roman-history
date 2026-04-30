@@ -194,6 +194,7 @@
     (function() {
         var infoKey = 'map-info-dismissed';
         var infoDismissed = localStorage.getItem(infoKey) === '1';
+        var infoBtn;
 
         /* create info button control (topleft, stacks below other controls) */
         var InfoBtnControl = L.Control.extend({
@@ -206,9 +207,10 @@
                 btn.title = 'About this map';
                 btn.setAttribute('role', 'button');
                 btn.setAttribute('aria-label', 'Show map information');
-                //if (!infoDismissed) { btn.style.display = 'none'; }
                 L.DomEvent.on(btn, 'click', L.DomEvent.preventDefault)
-                          .on(btn, 'click', showPanel);
+                          .on(btn, 'click', togglePanel);
+                L.DomEvent.disableClickPropagation(container);
+                infoBtn = btn;
                 return container;
             }
         });
@@ -226,24 +228,38 @@
                 {{ site.data.theme.map-description | default: "" }}
             </div>
         `;
-        /*panel.innerHTML = '<button id="map-info-close" aria-label="Close information panel">&times;</button>'
-            + '<h1 class="h3">{{ site.data.theme.map-description-title | default: site.title | escape }}</h1>'
-            + '<div class="map-info-body">{{ site.data.theme.map-description | default: "" | escape }}</div>';*/
         if (infoDismissed) { panel.style.display = 'none'; }
         document.getElementById('mapContainer').appendChild(panel);
 
-        /* close handler */
-        panel.querySelector('#map-info-close').addEventListener('click', function() {
+        /* prevent panel clicks from reaching the map */
+        L.DomEvent.disableClickPropagation(panel);
+
+        function hidePanel() {
             panel.style.display = 'none';
-            //infoControl.getContainer().querySelector('a').style.display = '';
+            if (infoBtn) { infoBtn.classList.remove('active'); }
             localStorage.setItem(infoKey, '1');
-        });
+        }
 
         function showPanel() {
             panel.style.display = '';
-            //infoControl.getContainer().querySelector('a').style.display = 'none';
+            if (infoBtn) { infoBtn.classList.add('active'); }
             localStorage.removeItem(infoKey);
         }
+
+        function togglePanel() {
+            if (panel.style.display === 'none') { showPanel(); } else { hidePanel(); }
+        }
+
+        /* close button handler */
+        panel.querySelector('#map-info-close').addEventListener('click', hidePanel);
+
+        /* close panel when clicking the map */
+        map.on('click', function() {
+            if (panel.style.display !== 'none') { hidePanel(); }
+        });
+
+        /* sync button highlight with initial panel state */
+        if (!infoDismissed && infoBtn) { infoBtn.classList.add('active'); }
     })();
 
     /* show popup if id in URL query */ 

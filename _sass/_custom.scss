@@ -43,3 +43,8 @@ a.map-info-btn {
     color: #333 !important;
     text-decoration: none !important;
 }
+a.map-info-btn.active {
+    background-color: #666 !important;
+    color: #fff !important;
+    svg { fill: #fff; }
+}

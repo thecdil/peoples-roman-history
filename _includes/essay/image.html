@@ -28,7 +28,7 @@
 </div>
 
 <div class="modal fade" id="{{ includeid }}Modal" tabindex="-1" aria-labelledby="{{ includeid }}ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="{{ includeid }}ModalLabel">{{ figure.title }}</h1>
@@ -37,8 +37,8 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-7">
-                        <img class="img-thumbnail" src="{{ figure.image_small | default: figure.image_thumb | relative_url }}" alt="{{ include.alt | default: figure.image_alt_text | default: figure.description | default: figure.title | escape }}">
-                        <a href="{{ figure.original_link | relative_url }}" class="btn btn-outline-primary m-3">View Original Source</a>
+                        <img class="img-fluid img-thumbnail" src="{{ figure.image_small | default: figure.image_thumb | relative_url }}" alt="{{ include.alt | default: figure.image_alt_text | default: figure.description | default: figure.title | escape }}">
+                        <a href="{{ figure.original_link | relative_url }}" class="btn btn-lg btn-outline-primary m-3">View Original Source</a>
                     </div>
                     <div class="col-md-5">
                         {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display_name != nil' -%}

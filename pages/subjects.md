@@ -4,9 +4,9 @@ layout: page
 permalink: /subjects.html
 ---
 
-## Browse Facets and Themes
+## Browse Themes
 
-Below are subject clouds displaying the terms used to describe the historical characters in this exhibit. 
+Below are subject clouds displaying the themes and terms used to describe the historical characters in this exhibit. 
 Click on the terms to view the related essays.
 
 ## Themes

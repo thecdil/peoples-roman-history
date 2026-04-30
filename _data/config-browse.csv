@@ -1,10 +1,11 @@
 field,display_name,btn,hidden,sort_name,facet_name
-time_period,Time Period,
-location,Location,
-province,Province,
+time_period,,
+location,,
+province,,
 status,Status,true
 gender,Gender,true
 age,Age,
 occupation,Occupation,
-themes,Themes,true
-exhibit_type,Exhibit Type,true
+themes,,true
+essay_type,,,true,
+author,,,true,

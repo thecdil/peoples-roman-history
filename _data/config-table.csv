@@ -1,5 +1,8 @@
 field,display_name
-title,Title
-date,Date
-description,Description
-subject,Subjects
+title,Name
+time_period,Era
+location,Location
+status,Status
+gender,Gender
+age,Age
+occupation,Occupation

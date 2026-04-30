@@ -2,7 +2,7 @@ display_name,stub,dropdown_parent
 Home,/,
 About,/about.html,
 Browse,/browse.html,
-Facets,/subjects.html,
+Themes,/subjects.html,
 Locations,/locations.html,
 Timeline,/timeline.html,
 Data,/data.html,

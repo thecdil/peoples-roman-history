@@ -1,5 +1,5 @@
 ---
-title: Subjects
+title: Themes
 layout: page
 permalink: /subjects.html
 ---
@@ -21,10 +21,6 @@ Click on the terms to view the related essays.
 
 {% include feature/cloud.html fields="occupation" button="info" %}
 
-## Theme
+## Themes
 
-{% include feature/cloud.html fields="theme" button="primary" %}
-
-## Location
-
-{% include feature/cloud.html fields="location;province" button="success" %}
+{% include feature/cloud.html fields="themes" button="primary" %}

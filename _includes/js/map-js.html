@@ -190,6 +190,62 @@
         document.querySelector('input.search-input').value = "";
     });{% endif %}
     
+    /* info panel */
+    (function() {
+        var infoKey = 'map-info-dismissed';
+        var infoDismissed = localStorage.getItem(infoKey) === '1';
+
+        /* create info button control (topleft, stacks below other controls) */
+        var InfoBtnControl = L.Control.extend({
+            options: { position: 'topleft' },
+            onAdd: function() {
+                var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+                var btn = L.DomUtil.create('a', 'map-info-btn', container);
+                btn.href = '#';
+                btn.innerHTML = '&#x2139;';
+                btn.title = 'About this map';
+                btn.setAttribute('role', 'button');
+                btn.setAttribute('aria-label', 'Show map information');
+                if (!infoDismissed) { btn.style.display = 'none'; }
+                L.DomEvent.on(btn, 'click', L.DomEvent.preventDefault)
+                          .on(btn, 'click', showPanel);
+                return container;
+            }
+        });
+        var infoControl = new InfoBtnControl();
+        infoControl.addTo(map);
+
+        /* create panel */
+        var panel = document.createElement('div');
+        panel.className = 'map-info-panel';
+        panel.setAttribute('role', 'region');
+        panel.setAttribute('aria-label', 'Map information');
+        panel.innerHTML = `<button id="map-info-close" aria-label="Close information panel">&times;</button>
+            <h1 class="modal-title h4">{{ site.data.theme.map-description-title | default: site.title | escape }}</h1>
+            <div class="info-panel-body">
+                {{ site.data.theme.map-description | default: "" }}
+            </div>
+        `;
+        /*panel.innerHTML = '<button id="map-info-close" aria-label="Close information panel">&times;</button>'
+            + '<h1 class="h3">{{ site.data.theme.map-description-title | default: site.title | escape }}</h1>'
+            + '<div class="map-info-body">{{ site.data.theme.map-description | default: "" | escape }}</div>';*/
+        if (infoDismissed) { panel.style.display = 'none'; }
+        document.getElementById('mapContainer').appendChild(panel);
+
+        /* close handler */
+        panel.querySelector('#map-info-close').addEventListener('click', function() {
+            panel.style.display = 'none';
+            infoControl.getContainer().querySelector('a').style.display = '';
+            localStorage.setItem(infoKey, '1');
+        });
+
+        function showPanel() {
+            panel.style.display = '';
+            infoControl.getContainer().querySelector('a').style.display = 'none';
+            localStorage.removeItem(infoKey);
+        }
+    })();
+
     /* show popup if id in URL query */ 
     if (markerFilter != "") {
         {% if site.data.theme.map-cluster == true %}

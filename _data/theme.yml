@@ -58,6 +58,8 @@ map-search: true # not suggested with large collections
 map-search-fuzziness: 0.35 # fuzzy search range from 1 = anything to 0 = exact match only
 map-cluster: true # suggested for large collection or with many items in same location
 map-cluster-radius: 25 # size of clusters, from ~ 10 to 80
+map-description-title: Welcome to the Peoples' History of the Roman Empire # heading for the map info panel (defaults to site title if blank)
+map-description: "<p>The Roman Empire was immense in both geographical and chronological scope. Beginning in the fifth century BCE, Roman power slowly began to creep out of the city, extending first through Italy, then overseas to Sicily, Sardinia, and Corsica, then into France, Spain, North Africa, and the Balkans until at its greatest extent it stretched from southern Scotland to the Near East, reaching almost as far as the Persian Gulf.</p> <p>With so much time and space to grapple with, the daily lives of individual Romans can feel impossible to grasp. By creating fictional characters that are composites of real evidence, this student-built website brings those daily lives into the foreground. Each number opens an individual essay intended to introduce you to life in Ancient Rome between 31 BCE and 500 CE across several themes.</p> <p>So, dive in, and enjoy learning about everything from baking bread to making perfume to marching with a Roman army!</p>" 
 
 ##########
 # TIMELINE PAGE

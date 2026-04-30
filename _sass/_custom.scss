@@ -2,3 +2,44 @@
     Put your custom SCSS here! 
     This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
 */
+
+/* Map info panel */
+.map-info-panel {
+    position: absolute;
+    top: 10px;
+    left: 48px;
+    z-index: 800;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    max-width: 500px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+
+#map-info-close {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #555;
+    padding: 0;
+
+    &:hover {
+        color: #000;
+    }
+}
+.info-panel-body {
+}
+
+a.map-info-btn {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333 !important;
+    text-decoration: none !important;
+}

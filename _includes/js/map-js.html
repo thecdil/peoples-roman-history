@@ -202,7 +202,7 @@
                 var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
                 var btn = L.DomUtil.create('a', 'map-info-btn', container);
                 btn.href = '#';
-                btn.innerHTML = '&#x2139;';
+                btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi text-black" viewBox="0 0 16 16"><path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0"/></svg>`;
                 btn.title = 'About this map';
                 btn.setAttribute('role', 'button');
                 btn.setAttribute('aria-label', 'Show map information');
@@ -217,7 +217,7 @@
 
         /* create panel */
         var panel = document.createElement('div');
-        panel.className = 'map-info-panel';
+        panel.className = 'map-info-panel text-white bg-dark bg-opacity-75';
         panel.setAttribute('role', 'region');
         panel.setAttribute('aria-label', 'Map information');
         panel.innerHTML = `<button id="map-info-close" aria-label="Close information panel">&times;</button>

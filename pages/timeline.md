@@ -1,7 +1,8 @@
 ---
 title: Timeline
-layout: timeline
+layout: timeline-roman
 permalink: /timeline.html
+timeline-field: year_aprox
 ---
 
-## Collection Timeline
+## Character Timeline

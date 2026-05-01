@@ -49,3 +49,8 @@ a.map-info-btn.active {
     color: #fff !important;
     svg { fill: #fff; }
 }
+
+// avoid issues with long citation urls breaking layouts
+#about-contents-wrapper {
+    overflow-wrap: break-word;
+}
